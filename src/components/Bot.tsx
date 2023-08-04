@@ -1,8 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../context";
+import { FC } from "react";
 
-const Bot: React.FC = () => {
-  const { ...context } = useContext(Context);
+type Props={
+
+}
+
+const Bot : FC = ({}:Props) =>  {
+  const { ...context }: any = useContext(Context);
   const player = context.currentBet.playersCurrent;
   const bot = context.currentBet.botsCurrent;
   const [winner, setWinner]= useState("you win")

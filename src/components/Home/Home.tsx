@@ -4,7 +4,7 @@ import Match from "./Matches/Match";
 import q from "../Home/Home.module.css";
 
 const Home = () => {
-  const { ...context } = useContext(Context);
+  const { ...context }: any = useContext(Context);
 
   return (
     <div className={q.imageContainer}>

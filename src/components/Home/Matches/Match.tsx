@@ -4,10 +4,26 @@ import firematch from "../../../source/FireMatch.png"
 import q from "../Home.module.css"
 import { Context } from "../../../context";
 
-const Match = ({ style, IsOnFire, matchNumber, SetIsOnFire }) => {
-  const { ...context } = useContext(Context)
+type CSSModuleClasses = {
+  imageContainer: string;
+  image: string;
+  onematchContainre: string;
+  twomatchesContainre: string;
+  threematchesContainre: string;
+  Match: string;
+}
 
-  function createMatches(n) {
+type Props ={
+style: keyof CSSModuleClasses;
+IsOnFire: boolean;
+matchNumber: number;
+SetIsOnFire: Function;
+}
+
+const Match = ({ style, IsOnFire, matchNumber, SetIsOnFire }: Props) => {
+  const { ...context }: any = useContext(Context)
+
+  function createMatches(n: number) {
 
     const matches = [];
     for (let i = 0; i < n; i++) {
